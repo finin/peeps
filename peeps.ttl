@@ -1,4 +1,5 @@
-@prefix : <https://raw.githubusercontent.com/UMBC-CMSC-491-691-F18-Knowledge-Graphs/peeps/master/peeps.ttl#> .
+@prefix peeps: <https://raw.githubusercontent.com/finin/peeps/master/peeps.ttl#> .
+@prefix : <https://raw.githubusercontent.com/finin/peeps/master/peeps.ttl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -6,13 +7,12 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix swrl: <http://www.w3.org/2003/11/swrl#> .
-@prefix peeps: <https://raw.githubusercontent.com/UMBC-CMSC-491-691-F18-Knowledge-Graphs/peeps/master/peeps.ttl> .
 @prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
 @prefix schema: <http://schema.org/> .
-@base <https://raw.githubusercontent.com/UMBC-CMSC-491-691-F18-Knowledge-Graphs/peeps/master/peeps.ttl> .
+@base <https://raw.githubusercontent.com/finin/peeps/master/peeps.ttl> .
 
-<https://raw.githubusercontent.com/UMBC-CMSC-491-691-F18-Knowledge-Graphs/peeps/master/peeps.ttl> rdf:type owl:Ontology ;
-                                                                                                   rdfs:label """An example ontology for people created in Protege OWL 5.5.  Note that
+<https://raw.githubusercontent.com/finin/peeps/master/peeps.ttl>  rdf:type owl:Ontology ;
+    rdfs:label """An example ontology for people created in Protege OWL 5.5.  Note that
 * while we do reference foaf:Person and schema:Person, we do not import their ontologies;
 * The ontology IRI is a url pointing to the raw file in a github repo.""" .
 
@@ -28,7 +28,7 @@
 #    Object Properties
 #################################################################
 
-###  https://raw.githubusercontent.com/UMBC-CMSC-491-691-F18-Knowledge-Graphs/peeps/master/peeps.ttl#hasChild
+###  https://raw.githubusercontent.com/finin/peeps/master/peeps.ttl#hasChild
 :hasChild rdf:type owl:ObjectProperty ;
           owl:inverseOf :hasParent ;
           rdf:type owl:AsymmetricProperty ,
@@ -37,7 +37,7 @@
           rdfs:range :Person .
 
 
-###  https://raw.githubusercontent.com/UMBC-CMSC-491-691-F18-Knowledge-Graphs/peeps/master/peeps.ttl#hasGrandparent
+###  https://raw.githubusercontent.com/finin/peeps/master/peeps.ttl#hasGrandparent
 :hasGrandparent rdf:type owl:ObjectProperty ,
                          owl:AsymmetricProperty ,
                          owl:IrreflexiveProperty ;
@@ -47,7 +47,7 @@
                 rdfs:comment "The parent of a parent is a grandparent." .
 
 
-###  https://raw.githubusercontent.com/UMBC-CMSC-491-691-F18-Knowledge-Graphs/peeps/master/peeps.ttl#hasMother
+###  https://raw.githubusercontent.com/finin/peeps/master/peeps.ttl#hasMother
 :hasMother rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf :hasParent ;
            rdf:type owl:FunctionalProperty ,
@@ -58,7 +58,7 @@
            rdfs:comment "" .
 
 
-###  https://raw.githubusercontent.com/UMBC-CMSC-491-691-F18-Knowledge-Graphs/peeps/master/peeps.ttl#hasParent
+###  https://raw.githubusercontent.com/finin/peeps/master/peeps.ttl#hasParent
 :hasParent rdf:type owl:ObjectProperty ,
                     owl:AsymmetricProperty ,
                     owl:IrreflexiveProperty ;
@@ -68,7 +68,7 @@
            rdfs:label "parent" .
 
 
-###  https://raw.githubusercontent.com/UMBC-CMSC-491-691-F18-Knowledge-Graphs/peeps/master/peeps.ttl#olderThan
+###  https://raw.githubusercontent.com/finin/peeps/master/peeps.ttl#olderThan
 :olderThan rdf:type owl:ObjectProperty ;
            owl:inverseOf :youngerThan ;
            rdf:type owl:AsymmetricProperty ,
@@ -78,7 +78,7 @@
            rdfs:range :Person .
 
 
-###  https://raw.githubusercontent.com/UMBC-CMSC-491-691-F18-Knowledge-Graphs/peeps/master/peeps.ttl#youngerThan
+###  https://raw.githubusercontent.com/finin/peeps/master/peeps.ttl#youngerThan
 :youngerThan rdf:type owl:ObjectProperty ,
                       owl:AsymmetricProperty ,
                       owl:TransitiveProperty ,
@@ -92,7 +92,7 @@
 #    Data properties
 #################################################################
 
-###  https://raw.githubusercontent.com/UMBC-CMSC-491-691-F18-Knowledge-Graphs/peeps/master/peeps.ttl#hasAge
+###  https://raw.githubusercontent.com/finin/peeps/master/peeps.ttl#hasAge
 :hasAge rdf:type owl:DatatypeProperty ,
                  owl:FunctionalProperty ;
         rdfs:domain :Person ;
@@ -100,7 +100,7 @@
         rdfs:comment "A person's age  in years" .
 
 
-###  https://raw.githubusercontent.com/UMBC-CMSC-491-691-F18-Knowledge-Graphs/peeps/master/peeps.ttl#hasSex
+###  https://raw.githubusercontent.com/finin/peeps/master/peeps.ttl#hasSex
 :hasSex rdf:type owl:DatatypeProperty ,
                  owl:FunctionalProperty ;
         rdfs:domain :Person ;
@@ -132,7 +132,7 @@ foaf:Person rdf:type owl:Class ;
             rdfs:comment "The Person concept from the foaf ontology" .
 
 
-###  https://raw.githubusercontent.com/UMBC-CMSC-491-691-F18-Knowledge-Graphs/peeps/master/peeps.ttl#Adult
+###  https://raw.githubusercontent.com/finin/peeps/master/peeps.ttl#Adult
 :Adult rdf:type owl:Class ;
        owl:equivalentClass [ owl:intersectionOf ( :Person
                                                   [ rdf:type owl:Restriction ;
@@ -152,7 +152,7 @@ foaf:Person rdf:type owl:Class ;
        rdfs:label "Adult person" .
 
 
-###  https://raw.githubusercontent.com/UMBC-CMSC-491-691-F18-Knowledge-Graphs/peeps/master/peeps.ttl#Boy
+###  https://raw.githubusercontent.com/finin/peeps/master/peeps.ttl#Boy
 :Boy rdf:type owl:Class ;
      owl:equivalentClass [ owl:intersectionOf ( :Man
                                                 :Minor
@@ -164,7 +164,7 @@ foaf:Person rdf:type owl:Class ;
      rdfs:label "Boy" .
 
 
-###  https://raw.githubusercontent.com/UMBC-CMSC-491-691-F18-Knowledge-Graphs/peeps/master/peeps.ttl#Man
+###  https://raw.githubusercontent.com/finin/peeps/master/peeps.ttl#Man
 :Man rdf:type owl:Class ;
      owl:equivalentClass [ owl:intersectionOf ( :Person
                                                 [ rdf:type owl:Restriction ;
@@ -179,7 +179,7 @@ foaf:Person rdf:type owl:Class ;
      rdfs:label "Male person" .
 
 
-###  https://raw.githubusercontent.com/UMBC-CMSC-491-691-F18-Knowledge-Graphs/peeps/master/peeps.ttl#Minor
+###  https://raw.githubusercontent.com/finin/peeps/master/peeps.ttl#Minor
 :Minor rdf:type owl:Class ;
        owl:equivalentClass [ owl:intersectionOf ( :Person
                                                   [ rdf:type owl:Restriction ;
@@ -197,7 +197,7 @@ foaf:Person rdf:type owl:Class ;
        rdfs:subClassOf :Person .
 
 
-###  https://raw.githubusercontent.com/UMBC-CMSC-491-691-F18-Knowledge-Graphs/peeps/master/peeps.ttl#Person
+###  https://raw.githubusercontent.com/finin/peeps/master/peeps.ttl#Person
 :Person rdf:type owl:Class ;
         owl:equivalentClass [ rdf:type owl:Restriction ;
                               owl:onProperty :hasParent ;
@@ -221,7 +221,7 @@ We also assert that it's equivalent to the corresponding concepts of a person in
         rdfs:label "Person" .
 
 
-###  https://raw.githubusercontent.com/UMBC-CMSC-491-691-F18-Knowledge-Graphs/peeps/master/peeps.ttl#Woman
+###  https://raw.githubusercontent.com/finin/peeps/master/peeps.ttl#Woman
 :Woman rdf:type owl:Class ;
        owl:equivalentClass [ owl:intersectionOf ( :Person
                                                   [ rdf:type owl:Restriction ;

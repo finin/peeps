@@ -9,7 +9,7 @@ default_endpoint = peeps
 person_query = """
 # find persons and their givenNames 
 PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
-PREFIX peeps: <https://raw.githubusercontent.com/UMBC-CMSC-491-691-F18-Knowledge-Graphs/peeps/master/peeps.ttl#> 
+PREFIX peeps: <https://raw.githubusercontent.com/finin/peeps/master/peeps.ttl#> 
 SELECT * WHERE {?p a peeps:Person; foaf:givenName ?n .} """
 
 class_query = """
