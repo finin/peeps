@@ -15,7 +15,7 @@ If we want to use any of the vocabulary terms of foaf in this ontology, the 'pro
 
 A downside is that Protege will load the entire ontology, most of which may not need needed.  There are techniques and best practices for modularizing ontologies to address this problems.
 
-# mypeeps.owl
+# mypeeps.ttl
 
 The mypeeps.owl file creates four individuals and asserts some facts about them.  It was created in protege by importing the peeps.owl ontology, creating the individuals and then saving it as mypeeps.owl.
 
