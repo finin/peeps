@@ -1,4 +1,4 @@
-# peeps.own
+# peeps.ttl
 
 An simple example ontology for people with some data
 
